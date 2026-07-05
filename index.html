@@ -4,24 +4,221 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>绣见红安</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", sans-serif;
+      background: #fffaf5;
+      color: #333;
+    }
+
+    header {
+      background: #b21f2d;
+      color: white;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h2 {
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 15px;
+    }
+
+    .hero {
+      padding: 90px 8%;
+      text-align: center;
+      background: linear-gradient(to bottom, #fff1ef, #fffaf5);
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      color: #a31624;
+      margin-bottom: 15px;
+    }
+
+    .hero h3 {
+      font-size: 24px;
+      color: #6b3f2a;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    section {
+      padding: 60px 8%;
+    }
+
+    section h2 {
+      color: #a31624;
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+      line-height: 1.8;
+    }
+
+    .card h3 {
+      color: #b21f2d;
+      margin-top: 0;
+    }
+
+    .process {
+      max-width: 850px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      line-height: 2;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    footer {
+      background: #7f1d1d;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>绣见红安</h1>
-  <h2>红安绣活非遗数字展示平台</h2>
 
-  <p>
-    一针一线，绣出红安记忆。本网站以红安绣活为核心，
-    通过非遗介绍、纹样解析、绣品卡体验和数字展厅，
-    让传统刺绣以更直观、更年轻、更互动的方式被看见。
-  </p>
+  <header>
+    <h2>绣见红安</h2>
+    <nav>
+      <a href="#home">首页</a>
+      <a href="#heritage">认识非遗</a>
+      <a href="#pattern">纹样针法</a>
+      <a href="#card">绣品卡</a>
+      <a href="#about">关于项目</a>
+    </nav>
+  </header>
 
-  <h3>网站主要内容</h3>
-  <ul>
-    <li>认识红安绣活</li>
-    <li>纹样与针法</li>
-    <li>红色记忆转译</li>
-    <li>红安记忆绣品卡</li>
-    <li>数字展厅</li>
-  </ul>
+  <div class="hero" id="home">
+    <h1>绣见红安</h1>
+    <h3>红安绣活非遗数字展示平台</h3>
+    <p>
+      一针一线，绣出红安记忆。本网站以红安绣活为核心，
+      通过非遗介绍、纹样解析、绣品卡体验和数字化展示，
+      让传统刺绣以更直观、更年轻、更互动的方式被看见。
+    </p>
+  </div>
+
+  <section id="heritage">
+    <h2>认识红安绣活</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>什么是红安绣活</h3>
+        <p>
+          红安绣活是一种具有地方特色的传统手工技艺，
+          通过针线、布料、纹样和色彩表达生活审美与文化记忆。
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>非遗价值</h3>
+        <p>
+          它的价值不仅在于图案好看，更在于背后承载的手工经验、
+          民间审美、地方记忆和代际传承。
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>当代表达</h3>
+        <p>
+          我们希望通过网站、纸绣体验卡和数字展厅，
+          让红安绣活从“被观看”走向“可参与”。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pattern">
+    <h2>纹样与针法</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>花草纹样</h3>
+        <p>象征生活气息、自然审美和美好祝愿，可用于边框和装饰图案。</p>
+      </div>
+
+      <div class="card">
+        <h3>五角星纹样</h3>
+        <p>象征红色记忆与革命精神，是本项目绣品卡的核心视觉符号。</p>
+      </div>
+
+      <div class="card">
+        <h3>纪念碑纹样</h3>
+        <p>象征纪念、信仰和历史传承，体现红安红色文化主题。</p>
+      </div>
+
+      <div class="card">
+        <h3>基础穿线法</h3>
+        <p>按照孔位顺序穿线，用不同颜色毛线完成图案轮廓和区域表达。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="card">
+    <h2>红安记忆绣品卡</h2>
+    <div class="process">
+      <p>
+        “红安记忆绣品卡”是本项目围绕红安绣活设计的非遗体验产品。
+        它将五角星、纪念碑、云纹、花草纹样等元素进行融合，
+        让参与者在穿线过程中了解红安故事，感受非遗刺绣的温度。
+      </p>
+
+      <p>
+        <strong>制作步骤：</strong><br>
+        第一步：选择对应颜色毛线。<br>
+        第二步：从背面穿入第一个孔位。<br>
+        第三步：按照同色线条依次穿线。<br>
+        第四步：完成五角星、纪念碑、云纹和花草区域。<br>
+        第五步：整理背面线头，完成绣品卡。
+      </p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>关于项目</h2>
+    <div class="process">
+      <p>
+        本项目来源于暑期社会实践，团队以红安绣活非遗传播为核心，
+        通过实地调研、资料整理、纹样设计、网站建设和体验活动，
+        探索红色文化与非遗刺绣结合的数字化传播路径。
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>绣见红安｜红安绣活非遗数字展示平台</p>
+  </footer>
+
 </body>
 </html>
