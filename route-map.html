@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>红安暑期社会实践路线图</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  if (new URLSearchParams(window.location.search).has('embed')) {
+    document.documentElement.classList.add('is-embedded');
+  }
+</script>
+<style>
+  body {
+    margin: 0;
+    font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+  }
+
+  #map {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .legend {
+    position: absolute;
+    z-index: 999;
+    left: 16px;
+    bottom: 18px;
+    max-width: min(760px, calc(100vw - 32px));
+    background: rgba(255, 255, 255, 0.92);
+    padding: 12px 14px;
+    border-radius: 10px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+    visibility: hidden;
+  }
+
+  .legend.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .title {
+    position: absolute;
+    z-index: 999;
+    left: 16px;
+    top: 16px;
+    max-width: min(640px, calc(100vw - 32px));
+    background: rgba(255, 255, 255, 0.94);
+    padding: 12px 16px;
+    border-radius: 10px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .title h2 {
+    margin: 0 0 4px;
+    font-size: 20px;
+  }
+
+  .title p {
+    margin: 0;
+    color: #444;
+    font-size: 13px;
+  }
+
+  .is-embedded .title,
+  .is-embedded .legend {
+    display: none !important;
+  }
+
+  @media (max-width: 640px) {
+    .title,
+    .legend {
+      left: 10px;
+      right: 10px;
+      max-width: none;
+      font-size: 12px;
+    }
+
+    .title h2 {
+      font-size: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div class="title">
+  <h2>“一针一线绣红安”暑期社会实践路线图</h2>
+  <p>以红安县城关镇住宿区为中心，分为城区调研线与七里坪非遗线</p>
+</div>
+<div class="legend">
+  <b>路线说明</b><br>
+  <span style="color:#b91c1c;">● 城区调研线：</span>住宿区 → 黄麻纪念园 → 红旅投的店 → 董必武故居 → 红安县文化馆<br>
+  <span style="color:#1d4ed8;">● 七里坪非遗线：</span>住宿区 → 七里坪长胜街 → 席和玉传承人拜访点<br>
+  <span style="color:#555;">注：</span>部分点位为近似落点，正式出行请用高德/百度地图二次导航确认。
+</div>
+<script>
+var map = L.map('map').setView([31.38, 114.63], 11);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+L.marker([31.28478, 114.60829]).addTo(map).bindPopup("<b>S 住宿建议区：红安县城关镇</b><br>建议住县城，方便打印、补给、开会整理资料<br>坐标约：31.28478, 114.60829");
+L.marker([31.2888, 114.606]).addTo(map).bindPopup("<b>1 黄麻起义和鄂豫皖苏区纪念园</b><br>红色故事调研：革命信仰、黄麻起义、苏区记忆<br>坐标约：31.28880, 114.60600");
+L.marker([31.2877, 114.6074]).addTo(map).bindPopup("<b>2 红旅投的店（黄麻纪念园旁）</b><br>文创、红安绣活产品展示与文旅融合调研<br>坐标约：31.28770, 114.60740");
+L.marker([31.2827, 114.6026]).addTo(map).bindPopup("<b>3 董必武故居</b><br>初心家风、初心使命主题调研<br>坐标约：31.28270, 114.60260");
+L.marker([31.2792, 114.6116]).addTo(map).bindPopup("<b>4 红安县文化馆</b><br>红安绣活展示、非遗传播与地方文化资源调研<br>坐标约：31.27920, 114.61160");
+L.marker([31.46509, 114.64966]).addTo(map).bindPopup("<b>5 七里坪长胜街</b><br>苏区记忆、长胜街街区调研、游客观察<br>坐标约：31.46509, 114.64966");
+L.marker([31.4664, 114.6508]).addTo(map).bindPopup("<b>6 红安绣活传承人席和玉拜访点</b><br>纹样、针法、色彩、传承现状访谈<br>坐标约：31.46640, 114.65080");
+
+var cityRoute = [[31.28478, 114.60829], [31.2888, 114.606], [31.2877, 114.6074], [31.2827, 114.6026], [31.2792, 114.6116], [31.28478, 114.60829]];
+var heritageRoute = [[31.28478, 114.60829], [31.46509, 114.64966], [31.4664, 114.6508], [31.28478, 114.60829]];
+
+L.polyline(cityRoute, { color: '#b91c1c', weight: 5, opacity: 0.85, dashArray: '8,8' })
+  .addTo(map).bindPopup('城区调研线：住宿区—黄麻纪念园—红旅投的店—董必武故居—红安县文化馆');
+
+L.polyline(heritageRoute, { color: '#1d4ed8', weight: 5, opacity: 0.85 })
+  .addTo(map).bindPopup('七里坪非遗线：住宿区—七里坪长胜街—席和玉传承人拜访点');
+
+var bounds = L.latLngBounds(cityRoute.concat(heritageRoute));
+map.fitBounds(bounds.pad(0.20));
+
+var legend = document.querySelector('.legend');
+function showLegend() {
+  if (legend) {
+    legend.classList.add('is-visible');
+  }
+}
+
+map.on('click dragstart zoomstart', showLegend);
+</script>
+</body>
+</html>
