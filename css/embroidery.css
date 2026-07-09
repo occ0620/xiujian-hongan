@@ -321,7 +321,7 @@ a {
 .charm-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  gap: 14px;
 }
 
 .icon-card,
@@ -339,24 +339,27 @@ a {
 }
 
 .icon-card {
-  min-height: 232px;
-  padding: 28px 22px 22px;
+  min-height: 194px;
+  padding: 20px 18px 18px;
   text-align: center;
 }
 
-.icon-card > span,
-.pattern-row article > span {
+.icon-card > span {
   display: grid;
-  width: 66px;
-  height: 66px;
-  margin: 0 auto 16px;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 12px;
   place-items: center;
   color: var(--red);
   border: 1px solid rgba(177, 42, 32, 0.28);
   border-radius: 50%;
   background: #fff7ee;
-  font-size: 34px;
+  font-size: 28px;
   line-height: 1;
+}
+
+.icon-card h3 {
+  font-size: 18px;
 }
 
 h3 {
@@ -378,15 +381,27 @@ h3 {
   font-size: 14px;
 }
 
+.icon-card p {
+  font-size: 13px;
+  line-height: 1.75;
+}
+
 .pill-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
-  margin-top: 16px;
+  gap: 7px;
+  margin-top: 12px;
 }
 
-.pill-row b,
+.pill-row b {
+  padding: 4px 9px;
+  color: #a45a32;
+  border-radius: 999px;
+  background: var(--tag);
+  font-size: 11px;
+}
+
 .image-card span {
   padding: 5px 10px;
   color: #a45a32;
@@ -425,38 +440,53 @@ h3 {
 
 .pattern-row {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr)) 1.38fr;
-  gap: 8px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .pattern-row article {
-  min-height: 208px;
-  padding: 22px 18px;
-  text-align: center;
-}
-
-.pattern-image {
-  position: relative;
   overflow: hidden;
-  border-radius: var(--radius);
+  border-color: rgba(177, 42, 32, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 250, 242, 0.9);
 }
 
-.pattern-image img {
+.pattern-row article img {
+  display: block;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1 / 0.82;
   object-fit: cover;
 }
 
-.pattern-image a {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  padding: 9px 16px;
-  color: var(--red);
-  border-radius: 999px;
-  background: rgba(255, 250, 242, 0.9);
-  font-size: 14px;
-  font-weight: 800;
+.pattern-row article div {
+  padding: 12px 12px 15px;
+}
+
+.pattern-row article span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 26px;
+  margin-bottom: 9px;
+  color: #fff7ee;
+  border-radius: 7px;
+  background: var(--red);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.pattern-row h3 {
+  color: #3a261f;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.pattern-row p {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.65;
 }
 
 .section-note {
@@ -1158,7 +1188,6 @@ h3 {
   }
 
   .hero-layout,
-  .pattern-row,
   .tools-panel,
   .stitch-detail-layout,
   .works-entry,
@@ -1175,6 +1204,10 @@ h3 {
 
   .hero-photo {
     display: none;
+  }
+
+  .pattern-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .charm-grid,
@@ -1259,6 +1292,7 @@ h3 {
   }
 
   .charm-grid,
+  .pattern-row,
   .tools-grid,
   .stitch-grid,
   .process-timeline,
