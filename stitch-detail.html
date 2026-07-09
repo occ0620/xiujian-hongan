@@ -40,10 +40,15 @@
         <a class="detail-btn outline" href="embroidery.html#stitches">返回针法小课堂</a>
       </div>
       <aside class="stitch-video-card">
-        <div class="stitch-video-placeholder">
-          <span>视频待添加</span>
+        <div class="stitch-video-link">
+          <span>视频教学</span>
+          <h2 id="videoTitle"></h2>
+          <a id="videoLink" class="detail-btn primary" href="#" target="_blank" rel="noopener">前往 B 站观看</a>
         </div>
-        <p>后续可将对应针法视频放入 `video/` 目录，再在本页脚本里填入视频地址。</p>
+        <div class="stitch-text-lesson">
+          <h3>文字教学</h3>
+          <ol id="lessonSteps"></ol>
+        </div>
       </aside>
     </section>
   </main>
@@ -54,39 +59,59 @@
         title: "套针绣",
         intro: "套针绣通过前后针脚相互衔接，让色块之间自然过渡，常用于花瓣、羽毛、动物身体等需要层次变化的部位。",
         use: "花瓣渐变、羽毛层次、图案明暗转折",
-        feature: "针脚方向顺着纹样走势排列，层层套接，画面更柔和饱满。"
+        feature: "针脚方向顺着纹样走势排列，层层套接，画面更柔和饱满。",
+        videoTitle: "【京绣】教程入门篇-套针绣",
+        videoUrl: "https://www.bilibili.com/video/BV12g411S7EC/?share_source=copy_web&vd_source=a94f4b7aea19b98c61f935c52c3d4a15",
+        steps: ["先确定纹样的明暗方向，沿轮廓轻轻起针。", "前一针与后一针错落衔接，让线色自然过渡。", "每一层针脚都顺着花瓣或羽毛走势排列，避免线迹突兀。", "收尾时整理边缘，让色块层次柔和饱满。"]
       },
       chanzhen: {
         title: "缠针绣",
         intro: "缠针绣以绕线或缠绕的方式形成凸起线条，适合表现边缘、枝蔓和装饰纹路，让图案更有立体感。",
         use: "轮廓线、藤蔓、花茎、装饰边",
-        feature: "线条饱满，触感明显，能够强化纹样的走势和边界。"
+        feature: "线条饱满，触感明显，能够强化纹样的走势和边界。",
+        videoTitle: "手绣苏绣常用针法教程——缠针（斜缠）",
+        videoUrl: "https://www.bilibili.com/video/BV1uP4y1L7rh/?share_source=copy_web&vd_source=a94f4b7aea19b98c61f935c52c3d4a15",
+        steps: ["先绣出基础线条或确定需要缠绕的位置。", "用针线围绕基础线有节奏地斜向缠绕。", "保持缠绕间距均匀，线条才会饱满清晰。", "适合用在花茎、边线和需要凸起效果的装饰处。"]
       },
       dingzhen: {
         title: "顶针绣",
         intro: "顶针绣借助顶针推动针线穿过较厚布料，适合处理鞋垫、童鞋等厚实绣品中的紧密针脚。",
         use: "厚布鞋垫、童鞋局部、密针固定",
-        feature: "强调稳定、耐用和针脚密度，适合生活绣品。"
+        feature: "强调稳定、耐用和针脚密度，适合生活绣品。",
+        videoTitle: "【顶针-刺绣】银杏叶胸针",
+        videoUrl: "https://www.bilibili.com/video/BV1Vi4y1E7dZ/?share_source=copy_web&vd_source=a94f4b7aea19b98c61f935c52c3d4a15",
+        steps: ["准备较厚布料时，可借助顶针保护手指。", "用顶针辅助推动针尾，让针顺利穿过布面。", "针脚保持密实稳定，适合需要耐磨的生活绣品。", "完成后检查线头和布面平整度，避免局部松动。"]
       },
       tiebu: {
         title: "贴布绣",
         intro: "贴布绣先将不同颜色或质地的布片剪成纹样，再缝贴固定，常用于大色块和民俗造型。",
         use: "虎头、花叶、大面积色块、儿童用品装饰",
-        feature: "色彩醒目，造型概括，能快速形成鲜明的民间图案效果。"
+        feature: "色彩醒目，造型概括，能快速形成鲜明的民间图案效果。",
+        videoTitle: "贴布绣",
+        videoUrl: "https://www.bilibili.com/video/BV1Nu411s7HV/?share_source=copy_web&vd_source=a94f4b7aea19b98c61f935c52c3d4a15",
+        steps: ["先把布片按纹样剪出大致形状。", "将布片放在底布指定位置，临时固定。", "沿布片边缘用针线缝合，可用锁边或细密针脚压住边缘。", "适合表现虎头、花叶和大色块民俗造型。"]
       },
       bianzi: {
         title: "辫子绣",
         intro: "辫子绣的线迹像编织的辫子，常用于边框、路径和装饰线，能增强图案的节奏感。",
         use: "边框、路径线、装饰带、局部强调",
-        feature: "线迹连续，有编织感，适合表现活泼的民俗装饰。"
+        feature: "线迹连续，有编织感，适合表现活泼的民俗装饰。",
+        videoTitle: "【刺绣】简单的辫子针绣法，刺绣方法基础",
+        videoUrl: "https://www.bilibili.com/video/BV1jW411X769/?share_source=copy_web&vd_source=a94f4b7aea19b98c61f935c52c3d4a15",
+        steps: ["沿需要装饰的边线确定走针方向。", "每一针与上一针形成连续套叠，像编辫子一样向前推进。", "注意线迹松紧一致，保持节奏感。", "常用于边框、路径线和花草纹样的装饰线。"]
       },
-      wenxiu: {
-        title: "纹绣",
-        intro: "纹绣重在用线条组织纹样结构，通过疏密、方向和转折表现图案的节奏与秩序。",
-        use: "底纹、几何纹、局部肌理、辅助装饰",
-        feature: "讲究线条排列和纹样关系，让画面更完整、更有层次。"
+      tiaoxiu: {
+        title: "挑绣",
+        intro: "挑绣也常被称为挑花，依照布面的经纬纹理挑针成纹，通过重复、交错和转折形成规整而富有节奏的图案。",
+        use: "几何纹、花草边饰、民俗图案、衣物和生活绣品装饰",
+        feature: "顺着布纹起针，线迹整齐，图案秩序感强，适合表现红安绣活中质朴、明快的民间纹样。",
+        videoTitle: "王的手创--基础绣法教学--（挑花）挑针绣、游针绣、人字绣",
+        videoUrl: "https://www.bilibili.com/video/BV1BM41137Px/?share_source=copy_web&vd_source=a94f4b7aea19b98c61f935c52c3d4a15",
+        steps: ["先观察布面的经纬格点，确定挑针行进方向。", "按图案需要挑起固定数量的布丝或格点。", "重复挑、压、转折，形成几何纹或花草边饰。", "保持针距均匀，图案会更规整，也更有红安民间绣活的质朴节奏。"]
       }
     };
+
+    stitches.wenxiu = stitches.tiaoxiu;
 
     const key = new URLSearchParams(window.location.search).get("stitch") || "taozhen";
     const stitch = stitches[key] || stitches.taozhen;
@@ -96,6 +121,14 @@
     document.getElementById("stitchIntro").textContent = stitch.intro;
     document.getElementById("stitchUse").textContent = stitch.use;
     document.getElementById("stitchFeature").textContent = stitch.feature;
+
+    const videoTitle = document.getElementById("videoTitle");
+    const videoLink = document.getElementById("videoLink");
+    const lessonSteps = document.getElementById("lessonSteps");
+
+    videoTitle.textContent = stitch.videoTitle;
+    videoLink.href = stitch.videoUrl;
+    lessonSteps.innerHTML = stitch.steps.map((step) => `<li>${step}</li>`).join("");
   </script>
 </body>
 </html>
