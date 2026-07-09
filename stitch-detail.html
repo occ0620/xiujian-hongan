@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="红安绣活针法详细简介。">
+  <title>针法简介 | 绣见红安</title>
+  <link rel="stylesheet" href="css/embroidery.css">
+</head>
+<body class="stitch-detail-page">
+  <header class="detail-header">
+    <div class="detail-container header-row">
+      <a class="detail-brand" href="index.html#home">
+        <span class="brand-logo"><img src="icon/icon1.png" alt="绣见红安标识"></span>
+        <span>
+          <strong>绣见红安</strong>
+          <small>从红色景点出发，遇见一针一线里的红安</small>
+        </span>
+      </a>
+      <nav class="detail-nav" aria-label="主导航">
+        <a href="index.html#home">首页</a>
+        <a href="index.html#spots">红色景点导览</a>
+        <a class="active" href="embroidery.html#stitches">针法小课堂</a>
+        <a href="embroidery.html">认识红安绣活</a>
+      </nav>
+      <a class="voice-btn" href="voice-guide.html"><img src="icon/icon2.png" alt="" aria-hidden="true">语音导览</a>
+    </div>
+  </header>
+
+  <main class="stitch-detail-main">
+    <section class="detail-container stitch-detail-layout">
+      <div class="stitch-detail-copy">
+        <p class="section-kicker">Embroidery Stitch</p>
+        <h1 id="stitchTitle">针法简介</h1>
+        <p id="stitchIntro"></p>
+        <dl class="stitch-meta">
+          <div><dt>适合表现</dt><dd id="stitchUse"></dd></div>
+          <div><dt>针法特点</dt><dd id="stitchFeature"></dd></div>
+        </dl>
+        <a class="detail-btn outline" href="embroidery.html#stitches">返回针法小课堂</a>
+      </div>
+      <aside class="stitch-video-card">
+        <div class="stitch-video-placeholder">
+          <span>视频待添加</span>
+        </div>
+        <p>后续可将对应针法视频放入 `video/` 目录，再在本页脚本里填入视频地址。</p>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const stitches = {
+      taozhen: {
+        title: "套针绣",
+        intro: "套针绣通过前后针脚相互衔接，让色块之间自然过渡，常用于花瓣、羽毛、动物身体等需要层次变化的部位。",
+        use: "花瓣渐变、羽毛层次、图案明暗转折",
+        feature: "针脚方向顺着纹样走势排列，层层套接，画面更柔和饱满。"
+      },
+      chanzhen: {
+        title: "缠针绣",
+        intro: "缠针绣以绕线或缠绕的方式形成凸起线条，适合表现边缘、枝蔓和装饰纹路，让图案更有立体感。",
+        use: "轮廓线、藤蔓、花茎、装饰边",
+        feature: "线条饱满，触感明显，能够强化纹样的走势和边界。"
+      },
+      dingzhen: {
+        title: "顶针绣",
+        intro: "顶针绣借助顶针推动针线穿过较厚布料，适合处理鞋垫、童鞋等厚实绣品中的紧密针脚。",
+        use: "厚布鞋垫、童鞋局部、密针固定",
+        feature: "强调稳定、耐用和针脚密度，适合生活绣品。"
+      },
+      tiebu: {
+        title: "贴布绣",
+        intro: "贴布绣先将不同颜色或质地的布片剪成纹样，再缝贴固定，常用于大色块和民俗造型。",
+        use: "虎头、花叶、大面积色块、儿童用品装饰",
+        feature: "色彩醒目，造型概括，能快速形成鲜明的民间图案效果。"
+      },
+      bianzi: {
+        title: "辫子绣",
+        intro: "辫子绣的线迹像编织的辫子，常用于边框、路径和装饰线，能增强图案的节奏感。",
+        use: "边框、路径线、装饰带、局部强调",
+        feature: "线迹连续，有编织感，适合表现活泼的民俗装饰。"
+      },
+      wenxiu: {
+        title: "纹绣",
+        intro: "纹绣重在用线条组织纹样结构，通过疏密、方向和转折表现图案的节奏与秩序。",
+        use: "底纹、几何纹、局部肌理、辅助装饰",
+        feature: "讲究线条排列和纹样关系，让画面更完整、更有层次。"
+      }
+    };
+
+    const key = new URLSearchParams(window.location.search).get("stitch") || "taozhen";
+    const stitch = stitches[key] || stitches.taozhen;
+
+    document.title = `${stitch.title} | 绣见红安`;
+    document.getElementById("stitchTitle").textContent = stitch.title;
+    document.getElementById("stitchIntro").textContent = stitch.intro;
+    document.getElementById("stitchUse").textContent = stitch.use;
+    document.getElementById("stitchFeature").textContent = stitch.feature;
+  </script>
+</body>
+</html>

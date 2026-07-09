@@ -85,12 +85,21 @@ a {
   overflow: hidden;
 }
 
-.footer-brand img {
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
   border-radius: 50%;
+  overflow: hidden;
+}
+
+.footer-icon img {
+  width: 156%;
+  height: 156%;
+  max-width: none;
+  border-radius: inherit;
   object-fit: cover;
+  transform: translate(-18%, -18%);
 }
 
 .brand-icon img {
@@ -196,7 +205,7 @@ a {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(370px, 0.78fr) minmax(430px, 1fr) 310px;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1fr) minmax(280px, 310px);
   gap: 34px;
   align-items: center;
 }
@@ -204,7 +213,6 @@ a {
 .hero-copy {
   position: relative;
   z-index: 3;
-  transform: translateX(-42px);
 }
 
 .hero-copy h1 {
@@ -343,8 +351,7 @@ a {
   position: relative;
   z-index: 5;
   justify-self: end;
-  width: 310px;
-  transform: translateX(48px);
+  width: min(100%, 310px);
   padding: 32px 28px;
   border: 1px solid var(--line);
   border-radius: 28px;
@@ -1094,7 +1101,7 @@ a {
   text-align: right;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
   .header-inner {
     gap: 16px;
   }
@@ -1116,18 +1123,13 @@ a {
   }
 
   .hero-grid {
-    grid-template-columns: minmax(330px, 0.85fr) minmax(360px, 1.15fr);
-  }
-
-  .hero-copy {
-    transform: none;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   }
 
   .journey-card {
     grid-column: 1 / -1;
     width: auto;
     justify-self: stretch;
-    transform: none;
   }
 
   .journey-card ol {
