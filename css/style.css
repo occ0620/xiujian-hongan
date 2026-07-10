@@ -468,12 +468,30 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
   gap: 28px;
+  align-items: start;
+}
+
+#spots.section {
+  padding: 24px 0 28px;
+}
+
+#spots .section-head {
+  margin-bottom: 14px;
+}
+
+#spots .section-head h2 {
+  font-size: clamp(26px, 2.7vw, 36px);
+}
+
+#spots .section-head p:not(.section-kicker) {
+  margin-top: 4px;
 }
 
 .spot-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
+  align-items: start;
 }
 
 .spot-card,
@@ -500,6 +518,10 @@ a {
   position: relative;
   height: 205px;
   overflow: visible;
+}
+
+#spots .spot-image {
+  height: 138px;
 }
 
 .place-image {
@@ -544,9 +566,24 @@ a {
   font-weight: 900;
 }
 
+#spots .spot-image span {
+  bottom: -18px;
+  width: 44px;
+  height: 44px;
+}
+
 .spot-body {
   min-height: 210px;
   padding: 42px 22px 24px;
+}
+
+#spots .spot-body {
+  min-height: 0;
+  padding: 30px 20px 16px;
+}
+
+#spots .spot-body h3 {
+  font-size: 18px;
 }
 
 .spot-body h3,
@@ -564,6 +601,19 @@ a {
   flex-wrap: wrap;
   gap: 8px;
   margin: 16px 0 12px;
+}
+
+#spots .tags {
+  margin: 10px 0 6px;
+}
+
+#spots .tags b {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+#spots .spot-body p {
+  line-height: 1.55;
 }
 
 .tags b {
@@ -591,6 +641,19 @@ a {
   border-radius: var(--radius);
 }
 
+#spots .map-card {
+  padding: 14px 20px;
+}
+
+#spots .map-card h3 {
+  font-size: 20px;
+}
+
+#spots .map-card p {
+  margin-top: 2px;
+  line-height: 1.45;
+}
+
 .map-card h3 {
   margin: 0;
   font-size: 22px;
@@ -606,6 +669,16 @@ a {
   background: #f6ead7;
 }
 
+#spots .map-box {
+  min-height: 76px;
+  margin: 10px 0;
+}
+
+#spots .btn {
+  min-height: 34px;
+  padding: 5px 22px;
+}
+
 .map-box iframe {
   width: 100%;
   height: 100%;
@@ -618,6 +691,22 @@ a {
   background: rgba(255, 247, 236, 0.72);
 }
 
+#heritage.section {
+  padding: 34px 0 38px;
+}
+
+#heritage .section-head {
+  margin-bottom: 18px;
+}
+
+#heritage .section-head h2 {
+  font-size: clamp(28px, 3vw, 40px);
+}
+
+#heritage .section-head p:not(.section-kicker) {
+  margin-top: 4px;
+}
+
 .heritage-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 520px;
@@ -625,10 +714,18 @@ a {
   align-items: center;
 }
 
+#heritage .heritage-layout {
+  gap: 28px;
+}
+
 .feature-icons {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+#heritage .feature-icons {
+  gap: 14px;
 }
 
 .feature-icons article {
@@ -647,6 +744,21 @@ a {
   object-fit: contain;
 }
 
+#heritage .feature-icons img {
+  width: 104px;
+  height: 104px;
+  margin-bottom: 8px;
+}
+
+#heritage .feature-icons h3 {
+  font-size: 18px;
+}
+
+#heritage .feature-icons p {
+  margin-top: 6px;
+  line-height: 1.55;
+}
+
 .learn-card {
   display: grid;
   grid-template-columns: 1fr 220px;
@@ -657,6 +769,12 @@ a {
   border-radius: var(--radius);
 }
 
+#heritage .learn-card {
+  align-self: end;
+  min-height: 210px;
+  padding: 28px 34px;
+}
+
 .learn-card img {
   width: 220px;
   height: 220px;
@@ -664,18 +782,47 @@ a {
   object-fit: cover;
 }
 
+#heritage .learn-card img {
+  width: 170px;
+  height: 170px;
+}
+
 .learn-card .btn {
   margin-top: 18px;
+}
+
+#heritage .learn-card .btn {
+  margin-top: 14px;
+}
+
+#card.section {
+  padding: 30px 0 34px;
+}
+
+#card .section-head {
+  margin-bottom: 18px;
+}
+
+#card .section-head h2 {
+  font-size: clamp(28px, 3vw, 40px);
+}
+
+#card .section-head p:not(.section-kicker) {
+  margin-top: 4px;
 }
 
 .creative-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
+  gap: 22px;
 }
 
 .creative-card > img {
   height: 185px;
+}
+
+#card .creative-card > img {
+  height: 140px;
 }
 
 .creative-card div {
@@ -683,14 +830,48 @@ a {
   padding: 20px 18px;
 }
 
+#card .creative-card div {
+  min-height: 104px;
+  padding: 16px 18px 18px;
+}
+
+#card .creative-card h3 {
+  font-size: 18px;
+}
+
+#card .creative-card p {
+  margin-top: 6px;
+  line-height: 1.55;
+}
+
+#gallery.section {
+  padding: 30px 0 34px;
+}
+
+#gallery .section-head {
+  margin-bottom: 18px;
+}
+
+#gallery .section-head h2 {
+  font-size: clamp(28px, 3vw, 40px);
+}
+
+#gallery .section-head p:not(.section-kicker) {
+  margin-top: 4px;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: 22px;
 }
 
 .gallery-grid img {
   height: 210px;
+}
+
+#gallery .gallery-grid img {
+  height: 150px;
 }
 
 .gallery-grid span {
@@ -699,6 +880,11 @@ a {
   color: var(--red);
   font-weight: 900;
   text-align: center;
+}
+
+#gallery .gallery-grid span {
+  padding: 12px 14px;
+  font-size: 16px;
 }
 
 .feedback-layout {
@@ -800,13 +986,17 @@ a {
   min-height: 100vh;
 }
 
+.questionnaire-page .container {
+  width: min(calc(100% - 52px), 1120px);
+}
+
 .questionnaire-header {
   border-bottom: 1px solid rgba(222, 196, 165, 0.76);
   background: rgba(255, 249, 239, 0.96);
 }
 
 .questionnaire-header-inner {
-  min-height: 78px;
+  min-height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -814,11 +1004,11 @@ a {
 }
 
 .questionnaire-main {
-  padding: 54px 0 70px;
+  padding: 38px 0 56px;
 }
 
 .questionnaire-hero {
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   text-align: center;
 }
 
@@ -826,44 +1016,45 @@ a {
   margin: 0;
   color: var(--red);
   font-family: "STKaiti", "KaiTi", serif;
-  font-size: clamp(40px, 5vw, 64px);
+  font-size: clamp(34px, 4vw, 50px);
   line-height: 1.15;
   letter-spacing: 0.08em;
 }
 
 .questionnaire-hero p {
-  max-width: 760px;
-  margin: 14px auto 0;
+  max-width: 720px;
+  margin: 10px auto 0;
   color: var(--muted);
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .questionnaire-grid {
+  max-width: 900px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  gap: 20px;
   align-items: start;
 }
 
 .questionnaire-card {
-  padding: 22px;
+  padding: 14px;
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: 20px;
   background: rgba(255, 250, 242, 0.92);
   box-shadow: 0 12px 30px rgba(101, 56, 33, 0.1);
 }
 
 .questionnaire-card h2 {
-  margin: 0 0 16px;
+  margin: 0 0 10px;
   color: var(--red);
   font-family: "STKaiti", "KaiTi", serif;
-  font-size: 28px;
+  font-size: 22px;
 }
 
 .questionnaire-card img {
   width: 100%;
   border: 1px solid rgba(234, 212, 188, 0.86);
-  border-radius: 16px;
+  border-radius: 14px;
   background: #fff;
   object-fit: contain;
 }
@@ -1173,6 +1364,10 @@ a {
   .container,
   .header-inner {
     width: min(calc(100% - 32px), var(--max));
+  }
+
+  .questionnaire-page .container {
+    width: min(calc(100% - 32px), 1120px);
   }
 
   .header-inner {
