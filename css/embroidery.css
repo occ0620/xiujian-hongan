@@ -550,11 +550,11 @@ h3 {
 .stitch-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  gap: 12px;
 }
 
 .stitch-link-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .image-card {
@@ -570,11 +570,11 @@ h3 {
 
 .stitch-card::after {
   position: absolute;
-  right: 18px;
-  bottom: 18px;
+  right: 12px;
+  bottom: 10px;
   content: "查看详情";
   color: var(--red);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 800;
 }
 
@@ -584,31 +584,50 @@ h3 {
   transform: translateY(-3px);
 }
 
+.stitch-card h3 {
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.stitch-card p {
+  display: -webkit-box;
+  margin-top: 6px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .image-card img {
   width: 100%;
-  height: 164px;
+  height: 118px;
   object-fit: cover;
 }
 
 .image-card div {
-  padding: 18px 20px 20px;
+  min-height: 150px;
+  padding: 12px 12px 30px;
 }
 
 .image-card b {
   display: inline-grid;
-  width: 30px;
-  height: 26px;
-  margin-bottom: 8px;
+  width: 26px;
+  height: 22px;
+  margin-bottom: 7px;
   place-items: center;
   color: #fff;
   border-radius: 5px;
   background: var(--red);
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .image-card span {
   display: inline-flex;
-  margin: 14px 6px 0 0;
+  margin: 8px 4px 0 0;
+  padding: 3px 7px;
+  font-size: 10px;
 }
 
 .stitch-detail-main {
@@ -1256,6 +1275,10 @@ h3 {
     grid-column: span 1;
   }
 
+  .stitch-link-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .process-timeline article:not(:last-child)::after,
   .history-line::before {
     display: none;
@@ -1332,6 +1355,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .stitch-link-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .tools-image {
     min-height: 240px;
   }
@@ -1379,5 +1406,11 @@ h3 {
 
   .story-modal h2 {
     font-size: 34px;
+  }
+}
+
+@media (max-width: 430px) {
+  .stitch-link-grid {
+    grid-template-columns: 1fr;
   }
 }
