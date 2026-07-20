@@ -113,3 +113,86 @@ voiceButtons.forEach((button) => {
     updateVoiceCard(button, audio);
   });
 });
+
+const visitImages = Array.from(document.querySelectorAll(".visit-images img"));
+const imageModal = document.querySelector(".image-modal");
+const imageModalDialog = imageModal ? imageModal.querySelector(".image-modal__dialog") : null;
+const imageModalImg = imageModal ? imageModal.querySelector(".image-modal__img") : null;
+const imageModalTitle = imageModal ? imageModal.querySelector("#imageModalTitle") : null;
+const imageModalCaption = imageModal ? imageModal.querySelector(".image-modal__caption") : null;
+const imageModalAddress = imageModal ? imageModal.querySelector(".image-modal__address") : null;
+const imageModalClose = imageModal ? imageModal.querySelector(".image-modal__close") : null;
+
+// 打开实地参考图片详情弹窗，并填入图片、地点和地址信息。
+function openVisitImageModal(image) {
+  if (!imageModal || !imageModalImg || !imageModalTitle || !imageModalCaption || !imageModalAddress) {
+    return;
+  }
+
+  const card = image.closest(".visit-card");
+  const title = card ? card.querySelector("h3") : null;
+  const address = card ? card.querySelector("address") : null;
+
+  imageModalImg.src = image.currentSrc || image.src;
+  imageModalImg.alt = image.alt || "实地参考图片";
+  imageModalTitle.textContent = title ? title.textContent : "图片详情";
+  imageModalCaption.textContent = image.alt || "点击查看实地参考图片细节。";
+  imageModalAddress.textContent = address ? address.textContent : "";
+  imageModal.classList.add("is-open");
+  imageModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+
+  if (imageModalClose) {
+    imageModalClose.focus();
+  }
+}
+
+// 关闭实地参考图片详情弹窗，恢复页面滚动。
+function closeVisitImageModal() {
+  if (!imageModal || !imageModalImg) {
+    return;
+  }
+
+  imageModal.classList.remove("is-open");
+  imageModal.setAttribute("aria-hidden", "true");
+  imageModalImg.src = "";
+  document.body.style.overflow = "";
+}
+
+visitImages.forEach((image) => {
+  image.setAttribute("tabindex", "0");
+  image.setAttribute("role", "button");
+  image.setAttribute("aria-label", `查看${image.alt || "实地参考图片"}详情`);
+
+  image.addEventListener("click", () => openVisitImageModal(image));
+  image.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openVisitImageModal(image);
+    }
+  });
+});
+
+if (imageModal) {
+  imageModal.addEventListener("click", (event) => {
+    if (event.target === imageModal) {
+      closeVisitImageModal();
+    }
+  });
+}
+
+if (imageModalDialog) {
+  imageModalDialog.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+}
+
+if (imageModalClose) {
+  imageModalClose.addEventListener("click", closeVisitImageModal);
+}
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && imageModal && imageModal.classList.contains("is-open")) {
+    closeVisitImageModal();
+  }
+});
